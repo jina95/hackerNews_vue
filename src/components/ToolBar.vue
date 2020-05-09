@@ -1,9 +1,5 @@
 <template>
   <header>
-      <!-- <router-link 
-      to="/news"  
-      :class="{'on': index === 1}" 
-      @click.native="clickWork(1)">NEWS</router-link> -->
       <router-link 
       to="/news"  
       :class="{'active': isNav.isNews}" 
@@ -17,11 +13,6 @@
       to="/ask" 
       :class="{'active': isNav.isAsk}"
        @click.native="setNav()">ASK</router-link>
-      <!-- <router-link
-      to="/" 
-      @click.native="clickWork(1)"
-      class="hackerNews"
-      >Hacker News</router-link> -->
       <router-link
       to="/" 
       class="hackerNews"
@@ -35,7 +26,6 @@
 export default {
     data(){
         return{
-            // index: 1,
             isNav: {
                 isNews: true,
                 isAsk: false,
@@ -44,9 +34,6 @@ export default {
         }
     },
     methods:{
-        // clickWork(index){
-        //     this.index = index
-        // },
         setNav(){
             let currentName = localStorage.getItem('nav');
             let uppCrrName = currentName.charAt(0).toUpperCase() + currentName.slice(1);
@@ -76,10 +63,8 @@ header h1 {position: absolute; color:white; top:21px; right:30px; font-size:18px
 header a {color:white; text-decoration: none; padding-bottom:3px; }
 header a + a {margin-left:20px}
 header .active {
-    color:coral;
-    border-bottom:3px solid coral
+    background-color: black;
 }
-.on { background-color: black;}
 .hackerNews {
     float: right;
 }
